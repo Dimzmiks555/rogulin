@@ -11,3 +11,86 @@
     align-items: center;
     gap: 20px;
 }
+
+.stats {
+    display: flex;
+    font-weight: 500;
+    gap: 10px;
+}
+
+.transports {
+    margin-top: 20px;
+}
+.transports h2 {
+    margin-bottom: 10px;
+}
+.transport {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+.transport:hover {
+    background: #eee;
+}
+
+.employees {
+    margin-top: 20px;
+}
+
+.employees h2 {
+    margin-bottom: 10px;
+}
+
+.employee {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.employee:hover {
+    background: #eee;
+}
+
+.travels {
+    margin-top: 20px;
+}
+
+.travels h2 {
+    margin-bottom: 10px;
+}
+
+.travel {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+.travel .stats {
+    justify-content: space-between;
+}
+
+.travel:hover {
+    background: #eee;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.filters .filter {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}

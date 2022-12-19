@@ -3,7 +3,21 @@
 {% block head %}
     <link rel="stylesheet" href="{% static "css/dashboard/dashboard.css" %}" />
 {% endblock head %}
+{% block sidebar %}
+<div class="filters">
+    <h2>Фильтры</h2>
+    <div class="filter">
+        <label>Дата, от</label>
+        <input type="date">
+    </div>
+    <div class="filter">
+        <label>Дата, от</label>
+        <input type="date">
+    </div>
+</div>
+{% endblock %}
 {% block main %}
+
 <div class="widgets">
     <div class="widget blue">
         <iconify-icon icon="ic:round-plus" width="64"></iconify-icon>
@@ -24,6 +38,92 @@
         <div>
             <h4>Прибыль</h4>
             <h3>2,000,000₽</h3>
+        </div>
+    </div>
+</div>
+<div class="transports">
+    <h2>Ваш транспорт</h2>
+    <div>
+        {% for transport in transports %}
+            <div class="transport">
+                <p>Транспорт {{transport.reg_number}}</p>
+                <div class="stats">
+                    <p>+100,000,000</p>
+                    <p>-80,000,000</p>
+                    <p>=20,000,000</p>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="transport">
+            <p>Транспорт А569РУ 136</p>
+            <div class="stats">
+                <p>+100,000,000</p>
+                <p>-80,000,000</p>
+                <p>=20,000,000</p>
+            </div>
+        </div>
+        <div class="transport">
+            <p>Транспорт А569РУ 136</p>
+            <div class="stats">
+                <p>+100,000,000</p>
+                <p>-80,000,000</p>
+                <p>=20,000,000</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="employees">
+    <h2>Ваши работники</h2>
+    <div>
+        
+        {% for employee in employees %}
+            <div class="transport">
+                <p>{{employee.sur_name}} {{employee.first_name}} {{employee.last_name}}</p>
+                <div class="stats">
+                    <p>+100,000,000</p>
+                    <p>-80,000,000</p>
+                    <p>=20,000,000</p>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="employee">
+            <p>Афанасьев Николай Дмитриевич</p>
+            <div class="stats">
+                <p>+100,000,000</p>
+                <p>-80,000,000</p>
+                <p>=20,000,000</p>
+            </div>
+        </div>
+        <div class="employee">
+            <p>Рогулин Андрей Васильевич</p>
+            <div class="stats">
+                <p>+100,000,000</p>
+                <p>-80,000,000</p>
+                <p>=20,000,000</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="travels">
+    <h2>Последние поездки</h2>
+    <div>
+        <div class="travel">
+            <p>Лиски - Москва с 7.12.22 по 20.12.22, Афанасьев Н. Д., А569РУ 136</p>
+            <div class="stats">
+                <p>+100,000,000</p>
+                <p>-80,000,000</p>
+                <p>=20,000,000</p>
+            </div>
+        </div>
+        <div class="travel">
+            <p>Лиски - Орел с 7.12.22 по 20.12.22, Рогулин А. В., А569РУ 136</p>
+            <div class="stats">
+                <p>+100,000,000</p>
+                <p>-80,000,000</p>
+                <p>=20,000,000</p>
+            </div>
         </div>
     </div>
 </div>

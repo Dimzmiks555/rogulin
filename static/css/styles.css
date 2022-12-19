@@ -35,9 +35,15 @@ input:focus {
 }
 
 .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
     padding: 30px 0;
     margin: 0 auto;
     width: 1024px;
+}
+aside {
+    width: 200px;
 }
 header {
     margin-bottom: 20px;

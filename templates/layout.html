@@ -10,15 +10,9 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">Сводка по транспорту</a></li>
-                    <li><a href="#">Сводка по работникам</a></li>
-                </ul>
-            </nav>
-        </header>
+        <aside>
+            {% block sidebar %}{% endblock sidebar %}
+        </aside>
         <main>
             {% block main %}{% endblock main %}
         </main>
