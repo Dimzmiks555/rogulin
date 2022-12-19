@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static "css/dashboard/dashboard.css" %}" />
+{% endblock head %}
+{% block main %}
+<div class="widgets">
+    <div class="widget blue">
+        <iconify-icon icon="ic:round-plus" width="64"></iconify-icon>
+        <div>
+            <h4>Доход</h4>
+            <h3>12,200,000₽</h3>
+        </div>
+    </div>
+    <div class="widget red">
+        <iconify-icon icon="ic:round-minus" width="64"></iconify-icon>
+        <div>
+            <h4>Расход</h4>
+            <h3>10,200,000₽</h3>
+        </div>
+    </div>
+    <div class="widget green">
+        <iconify-icon icon="ic:baseline-trending-up" width="64"></iconify-icon>
+        <div>
+            <h4>Прибыль</h4>
+            <h3>2,000,000₽</h3>
+        </div>
+    </div>
+</div>
+{% endblock %}

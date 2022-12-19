@@ -15,6 +15,8 @@ class Employee(models.Model):
     passport_given_by = models.CharField('Выдан (кем?)', max_length=255, default='')
     passport_filial_code = models.CharField('Код подразделения', max_length=20, default='')
     passport_address = models.CharField('Адрес прописки', max_length=255, default='')
+    driving_license = models.CharField('Номер водительского удостоверения', max_length=255, default='')
+    phone = models.CharField('Номер телефона', max_length=255, default='')
 
     class Meta:
         verbose_name = 'Работник'
