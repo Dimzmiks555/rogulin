@@ -21,6 +21,7 @@ class WorkSheet(models.Model):
 
 # Расход
 class Expense(models.Model):
+    date = models.DateField('Дата', default=date.today())
     summ = models.DecimalField('Сумма', max_digits=20, decimal_places=2)
     type = models.ForeignKey(ExpenseType, on_delete=models.CASCADE, verbose_name='Тип')
     work_sheet = models.ForeignKey(WorkSheet, on_delete=models.CASCADE, verbose_name='Рабочий лист', default=0)
@@ -31,6 +32,7 @@ class Expense(models.Model):
 
 # Доход
 class Income(models.Model):
+    date = models.DateField('Дата', default=date.today())
     summ = models.DecimalField('Сумма', max_digits=20, decimal_places=2)
     type = models.ForeignKey(IncomeType, on_delete=models.CASCADE, verbose_name='Тип')
     work_sheet = models.ForeignKey(WorkSheet, on_delete=models.CASCADE, verbose_name='Рабочий лист', default=0)

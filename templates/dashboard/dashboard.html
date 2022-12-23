@@ -23,21 +23,21 @@
         <iconify-icon icon="ic:round-plus" width="64"></iconify-icon>
         <div>
             <h4>Доход</h4>
-            <h3>12,200,000₽</h3>
+            <h3>{{total.incomes_summ}}₽</h3>
         </div>
     </div>
     <div class="widget red">
         <iconify-icon icon="ic:round-minus" width="64"></iconify-icon>
         <div>
             <h4>Расход</h4>
-            <h3>10,200,000₽</h3>
+            <h3>{{total.expenses_summ}}₽</h3>
         </div>
     </div>
     <div class="widget green">
         <iconify-icon icon="ic:baseline-trending-up" width="64"></iconify-icon>
         <div>
             <h4>Прибыль</h4>
-            <h3>2,000,000₽</h3>
+            <h3>{{total.benefit}}₽</h3>
         </div>
     </div>
 </div>
@@ -46,12 +46,11 @@
     <div>
         {% for transport in transports %}
             <div class="transport">
-                {{transport.expenses_summ}}
                 <p>Транспорт {{transport.reg_number}}</p>
                 <div class="stats">
-                    <p>+100,000,000</p>
-                    <p>-80,000,000</p>
-                    <p>=20,000,000</p>
+                    <p>Д {{transport.incomes_summ}}</p>
+                    <p>Р {{transport.expenses_summ}}</p>
+                    <p>П {{transport.benefit_summ}}</p>
                 </div>
             </div>
         {% endfor %}
@@ -66,28 +65,12 @@
             <div class="transport">
                 <p>{{employee.sur_name}} {{employee.first_name}} {{employee.last_name}}</p>
                 <div class="stats">
-                    <p>+100,000,000</p>
-                    <p>-80,000,000</p>
-                    <p>=20,000,000</p>
+                    <p>Д {{employee.incomes_summ}}</p>
+                    <p>Р {{employee.expenses_summ}}</p>
+                    <p>П {{employee.benefit_summ}}</p>
                 </div>
             </div>
         {% endfor %}
-        <div class="employee">
-            <p>Афанасьев Николай Дмитриевич</p>
-            <div class="stats">
-                <p>+100,000,000</p>
-                <p>-80,000,000</p>
-                <p>=20,000,000</p>
-            </div>
-        </div>
-        <div class="employee">
-            <p>Рогулин Андрей Васильевич</p>
-            <div class="stats">
-                <p>+100,000,000</p>
-                <p>-80,000,000</p>
-                <p>=20,000,000</p>
-            </div>
-        </div>
     </div>
 </div>
 
