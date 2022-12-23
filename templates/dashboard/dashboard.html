@@ -46,6 +46,7 @@
     <div>
         {% for transport in transports %}
             <div class="transport">
+                {{transport.expenses_summ}}
                 <p>Транспорт {{transport.reg_number}}</p>
                 <div class="stats">
                     <p>+100,000,000</p>
@@ -54,22 +55,6 @@
                 </div>
             </div>
         {% endfor %}
-        <div class="transport">
-            <p>Транспорт А569РУ 136</p>
-            <div class="stats">
-                <p>+100,000,000</p>
-                <p>-80,000,000</p>
-                <p>=20,000,000</p>
-            </div>
-        </div>
-        <div class="transport">
-            <p>Транспорт А569РУ 136</p>
-            <div class="stats">
-                <p>+100,000,000</p>
-                <p>-80,000,000</p>
-                <p>=20,000,000</p>
-            </div>
-        </div>
     </div>
 </div>
 
