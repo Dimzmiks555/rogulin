@@ -42,6 +42,8 @@ class Transport(models.Model):
         verbose_name = 'Транспорт'
         verbose_name_plural = 'Транспорт'
 
+
+
     
     def __str__(self) :
         return f'Транспорт {self.reg_number}'
