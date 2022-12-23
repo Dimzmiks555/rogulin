@@ -45,3 +45,15 @@ class Transport(models.Model):
     
     def __str__(self) :
         return f'Транспорт {self.reg_number}'
+
+# Город
+class City(models.Model):
+    name = models.CharField('Название', max_length=255, default='')
+
+    class Meta:
+        verbose_name = 'Город'
+        verbose_name_plural = 'Города'
+
+    
+    def __str__(self) :
+        return f'Город {self.reg_number}'
