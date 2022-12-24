@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static "css/dashboard/report.css" %}" />
+{% endblock head %}
+
+{% block sidebar %}
+<a class="back__button" href="/dashboard">Назад </a>
+<h2>Фильтры</h2>
+<div class="filters">
+    <!-- <div class="filter">
+        <label>Дата, от</label>
+        <input type="date">
+    </div>
+    <div class="filter">
+        <label>Дата, от</label>
+        <input type="date">
+    </div> -->
+    <div class="filter">
+        <label>Водитель</label>
+        <select >
+            {% for employee in employees %}
+            <option>Выберите...</option>
+            <option>{{employee.sur_name}} {{employee.first_name}} {{employee.last_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="filter">
+        <label>Транспорт</label>
+        <select >
+            {% for transport in transports %}
+            <option>Выберите...</option>
+            <option>Транспорт {{transport.reg_number}}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+{% endblock %}
+{% block main %}
+    <h2>Сводка по рабочим листам</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>№</td>
+                <td>Дата открытия</td>
+                <td>Дата закрытия</td>
+                <td>Водитель</td>
+                <td>Транспорт</td>
+                <td>Доход</td>
+                <td>Расход</td>
+                <td>Прибыль</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for worksheet in worksheets %}
+            <tr>
+                <td>1</td>
+                <td>{{worksheet.open_date|date:"d.m.Y" }}</td>
+                <td>{{worksheet.close_date|date:"d.m.Y" }}</td>
+                <td>{{worksheet.employee.sur_name}} {{worksheet.employee.first_name}}</td>
+                <td>{{worksheet.transport.reg_number}}</td>
+                <td>{{worksheet.incomes_summ}}</td>
+                <td>{{worksheet.expenses_summ}}</td>
+                <td>{{worksheet.benefit_summ}}</td>
+            </tr>
+            {% endfor %}
+        </thead>
+    </table>
+{% endblock %}

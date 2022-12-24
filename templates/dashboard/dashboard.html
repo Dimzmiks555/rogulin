@@ -5,19 +5,27 @@
 {% endblock head %}
 {% block sidebar %}
 <div class="filters">
-    <h2>Фильтры</h2>
-    <div class="filter">
+    <h2>Отчеты</h2>
+    <!-- <h2>Фильтры</h2> -->
+    <!-- <div class="filter">
         <label>Дата, от</label>
         <input type="date">
     </div>
     <div class="filter">
         <label>Дата, от</label>
         <input type="date">
-    </div>
+    </div> -->
 </div>
+<a class="back__button" href="/dashboard/report/">Общий</a>
+<a class="back__button" href="/dashboard/report_expenses/">Отчет по расходам</a>
 {% endblock %}
 {% block main %}
-
+<div class="quick__buttons">
+    <div class="quick__button active">За всё время</div>
+    <div class="quick__button">1 месяц</div>
+    <div class="quick__button">1 квартал</div>
+    <div class="quick__button">1 год</div>
+</div>
 <div class="widgets">
     <div class="widget blue">
         <iconify-icon icon="ic:round-plus" width="64"></iconify-icon>
@@ -74,7 +82,7 @@
     </div>
 </div>
 
-<div class="travels">
+<!-- <div class="travels">
     <h2>Последние поездки</h2>
     <div>
         <div class="travel">
@@ -94,5 +102,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 {% endblock %}

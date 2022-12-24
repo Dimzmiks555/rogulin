@@ -24,14 +24,24 @@ input, button, select {
     font-size: inherit;
 }
 
-input {
+input,select {
     border-radius: 4px;
     padding: 8px 16px;
     background: #eef;
     border: none;
 }
-input:focus {
+input:focus, select:focus {
     outline: 2px solid #0093E9;
+}
+
+table {
+    border-collapse: collapse;
+}
+table thead {
+    font-weight: 500;
+}
+table td {
+    padding: 4px 8px;
 }
 
 .container {

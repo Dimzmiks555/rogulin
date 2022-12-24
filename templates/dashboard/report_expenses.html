@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static "css/dashboard/report.css" %}" />
+{% endblock head %}
+
+{% block sidebar %}
+<a class="back__button" href="/dashboard">Назад </a>
+<h2>Фильтры</h2>
+<div class="filters">
+    <!-- <div class="filter">
+        <label>Дата, от</label>
+        <input type="date">
+    </div>
+    <div class="filter">
+        <label>Дата, от</label>
+        <input type="date">
+    </div> -->
+    
+    <div class="filter">
+        <label>Статья расхода</label>
+        <select >
+            <option>Все</option>
+            {% for expense_type in expense_types %}
+            <option>{{expense_type.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="filter">
+        <label>Водитель</label>
+        <select >
+            <option>Все</option>
+            {% for employee in employees %}
+            <option>{{employee.sur_name}} {{employee.first_name}} {{employee.last_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="filter">
+        <label>Транспорт</label>
+        <select >
+            <option>Все</option>
+            {% for transport in transports %}
+            <option>Транспорт {{transport.reg_number}}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+{% endblock %}
+{% block main %}
+    <h2>Отчет по расходам</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>№</td>
+                <td>Дата</td>
+                <td>Статья расхода</td>
+                <td>Водитель</td>
+                <td>Транспорт</td>
+                <td>Сумма</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for expense in expenses %}
+            <tr>
+                <td>1</td>
+                <td>{{expense.date|date:"d.m.Y" }}</td>
+                <td>{{expense.type.name}}</td>
+                <td>{{expense.work_sheet.employee.sur_name}} {{expense.work_sheet.employee.first_name}}</td>
+                <td>{{expense.work_sheet.transport.reg_number}}</td>
+                <td>{{expense.summ}}</td>
+            </tr>
+            {% endfor %}
+        </thead>
+    </table>
+{% endblock %}
