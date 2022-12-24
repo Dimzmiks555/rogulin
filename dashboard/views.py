@@ -92,9 +92,6 @@ def report(request):
         'benefit': total_incomes_summ - total_expenses_summ
     }
 
-    print(total)
-
-
     worksheets = WorkSheet.objects.filter()
 
     for worksheet in worksheets:
