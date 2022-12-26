@@ -58,4 +58,35 @@ class City(models.Model):
 
     
     def __str__(self) :
-        return f'Город {self.reg_number}'
+        return f'Город {self.name}'
+
+
+# Прицеп
+class Trailer(models.Model):
+    name = models.CharField('Название', max_length=255, default='')
+    reg_number = models.CharField('Регистрационный номер', max_length=255, default='')
+
+    class Meta:
+        verbose_name = 'Прицеп'
+        verbose_name_plural = 'Прицепы'
+
+    
+    def __str__(self) :
+        return f'Прицеп {self.name}/{self.reg_number}'
+
+
+# Организация
+class Company(models.Model):
+    fio = models.CharField('ФИО', max_length=255, default='')
+    inn = models.CharField('ИНН', max_length=255, default='')
+    ogrn = models.CharField('ОГРН', max_length=255, default='')
+    address = models.CharField('Юридический адрес', max_length=255, default='')
+    phone = models.CharField('Номер телефона', max_length=255, default='')
+
+    class Meta:
+        verbose_name = 'Организация'
+        verbose_name_plural = 'Организации'
+
+    
+    def __str__(self) :
+        return f'Организация {self.name}'
