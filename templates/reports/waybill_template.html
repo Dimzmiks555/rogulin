@@ -69,7 +69,7 @@
             style="width: 121.9pt; padding: 0cm 1.6pt 0cm 1.6pt"
           >
             <h2>
-              <span style="font-size: 12.5pt">ПУТЕВОЙ ЛИСТ № {ЦИФРА} <o:p></o:p></span>
+              <span style="font-size: 12.5pt">ПУТЕВОЙ ЛИСТ № {{ id }} <o:p></o:p></span>
             </h2>
           </td>
           <td
@@ -382,7 +382,7 @@
             <p class="MsoNoSpacing">
               <b
                 ><span style="font-size: 11pt"
-                  >Мизяков Константин Александрович<o:p></o:p></span
+                  >{{waybill.worksheet.employee.fio}}<o:p></o:p></span
               ></b>
             </p>
           </td>
@@ -447,7 +447,7 @@
             <p class="MsoNormal" style="margin-left: 2.85pt">
               <b style="mso-bidi-font-weight: normal"
                 ><span style="font-size: 9pt"
-                  >Рогулин Андрей Васильевич<o:p></o:p></span
+                  >{{waybill.company.fio}}<o:p></o:p></span
               ></b>
             </p>
           </td>
@@ -488,7 +488,7 @@
           >
             <p class="MsoNormal" style="margin-left: 2.85pt">
               <b
-                ><span style="font-size: 11pt">36 26 683723<o:p></o:p></span
+                ><span style="font-size: 11pt">{{waybill.worksheet.employee.driving_license}}<o:p></o:p></span
               ></b>
             </p>
           </td>
@@ -557,8 +557,7 @@
             <p class="MsoNormal" style="margin-left: 2.85pt">
               <b style="mso-bidi-font-weight: normal"
                 ><span style="font-size: 9pt"
-                  >Россия,397934,Воронежская обл, Лискинский р-н, с.Копанище,
-                  ул.Молодежная, 9<o:p></o:p></span
+                  >{{waybill.company.address}}<o:p></o:p></span
               ></b>
             </p>
           </td>
@@ -681,7 +680,7 @@
           >
             <p class="MsoNormal" style="margin-left: 2.85pt">
               <b
-                ><span style="font-size: 9pt">+7(915)5477967<o:p></o:p></span
+                ><span style="font-size: 9pt">{{waybill.company.phone}}<o:p></o:p></span
               ></b>
             </p>
           </td>

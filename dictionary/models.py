@@ -25,6 +25,10 @@ class Employee(models.Model):
     def __str__(self) :
         return f'{self.sur_name} {self.first_name} {self.last_name}'
 
+    
+    def fio(self) :
+        return f'{self.sur_name} {self.first_name} {self.last_name}'
+
 
 
 
@@ -89,4 +93,4 @@ class Company(models.Model):
 
     
     def __str__(self) :
-        return f'Организация {self.name}'
+        return f'Организация {self.fio}'

@@ -18,6 +18,10 @@ class WorkSheet(models.Model):
         verbose_name = 'Рабочий лист'
         verbose_name_plural = 'Рабочие листы'
 
+    
+    def __str__(self) :
+        return f'Путевой лист {self.id}'
+
 
 # Расход
 class Expense(models.Model):

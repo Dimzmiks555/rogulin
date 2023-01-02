@@ -1,6 +1,6 @@
 from django.db import models
 from finance_operations.models import WorkSheet
-from dictionary.models import City
+from dictionary.models import City, Company
 
 # Create your models here.
 
@@ -10,6 +10,7 @@ class WayBill(models.Model):
     open_date=models.DateField()
     close_date=models.DateField()
     worksheet=models.ForeignKey(WorkSheet, on_delete=models.CASCADE, verbose_name='Рабочий лист')
+    company=models.ForeignKey(Company, on_delete=models.CASCADE, verbose_name='Организация')
 
     class Meta:
         verbose_name="Путевой лист"
