@@ -1,6 +1,6 @@
 from django.db import models
 from common.models import ExpenseType, IncomeType
-from dictionary.models import Transport, Employee
+from dictionary.models import Transport, Employee, Trailer
 from datetime import date
 
 # Create your models here.
@@ -11,6 +11,7 @@ class WorkSheet(models.Model):
     open_date = models.DateField('Дата открытия', default=date.today)
     close_date = models.DateField('Дата закрытия', default=date.today)
     transport = models.ForeignKey(Transport, on_delete=models.CASCADE, verbose_name='Транспорт')
+    trailer = models.ForeignKey(Trailer, on_delete=models.CASCADE, verbose_name='Прицеп', default=None)
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE, verbose_name='Работник')
     mileage = models.IntegerField('Пробег', default=0)
     

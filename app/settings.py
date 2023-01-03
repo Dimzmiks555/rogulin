@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     "dictionary",
     "common",
     "dashboard",
-    "reports"
+    "reports",
+    "licenses"
 ]
 
 MIDDLEWARE = [

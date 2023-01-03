@@ -286,7 +286,7 @@
             "
           >
             <p class="MsoNormal">
-              <span style="font-size: 7pt">22<o:p></o:p></span>
+              <span style="font-size: 7pt"><o:p></o:p></span>
             </p>
           </td>
           <td
@@ -763,7 +763,7 @@
             <p class="MsoNormal">
               <b
                 ><span lang="EN-US" style="font-size: 8pt"
-                  >SITRAK C 7H ZZ4186V361HE<o:p></o:p></span
+                  >{{waybill.worksheet.transport.name}} {{waybill.worksheet.transport.model}}<o:p></o:p></span
               ></b>
             </p>
           </td>
@@ -784,7 +784,7 @@
           >
             <p class="MsoNormal" align="center" style="text-align: center">
               <b
-                ><span style="font-size: 9pt">О 100 КВ 136 <o:p></o:p></span
+                ><span style="font-size: 9pt">{{waybill.worksheet.transport.reg_number}} <o:p></o:p></span
               ></b>
             </p>
           </td>
@@ -820,7 +820,7 @@
           >
             <p class="MsoNoSpacing">
               <b style="mso-bidi-font-weight: normal"
-                ><span style="font-size: 8pt">Полуприцеп цистерна</span></b
+                ><span style="font-size: 8pt">{{waybill.worksheet.trailer.name}}</span></b
               ><b style="mso-bidi-font-weight: normal"
                 ><span style="font-size: 9pt"><o:p></o:p></span
               ></b>
@@ -842,7 +842,7 @@
           >
             <p class="MsoNormal" align="center" style="text-align: center">
               <b style="mso-bidi-font-weight: normal"
-                ><span style="font-size: 9pt">АХ 7399 36<o:p></o:p></span
+                ><span style="font-size: 9pt">{{waybill.worksheet.trailer.reg_number}}<o:p></o:p></span
               ></b>
             </p>
           </td>
@@ -962,7 +962,7 @@
           >
             <p class="MsoNormal" align="center" style="text-align: center">
               <span style="mso-bidi-font-size: 7.5pt"
-                >Ситникова В.В.<o:p></o:p
+                >{{waybill.doctor.short_fio}}<o:p></o:p
               ></span>
             </p>
           </td>
@@ -1032,7 +1032,7 @@
           >
             <p class="MsoNormal" align="center" style="text-align: center">
               <span style="mso-bidi-font-size: 7.5pt"
-                >Рогулин А.В.<o:p></o:p
+                >{{waybill.engineer.short_fio}}<o:p></o:p
               ></span>
             </p>
           </td>
@@ -3735,7 +3735,7 @@
           >
             <p class="MsoNormal" align="center" style="text-align: right">
               <span style="font-size: 9pt"
-                ><span style="mso-spacerun: yes"></span> /Рогулин А.В.<o:p></o:p
+                ><span style="mso-spacerun: yes"></span> /{{waybill.company.short_fio}}<o:p></o:p
               ></span>
             </p>
           </td>
