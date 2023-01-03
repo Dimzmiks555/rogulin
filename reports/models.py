@@ -27,9 +27,12 @@ class Ride(models.Model):
 
     date=models.DateField()
     waybill=models.ForeignKey(WayBill, on_delete=models.CASCADE, verbose_name='Путевой лист')
-    distance=models.IntegerField('Расстояние')
+    distance=models.IntegerField('Расстояние, км')
+    ttn_number=models.CharField('№ ТТН', max_length=255, default='')
+    cargo_name=models.CharField('Название груза', max_length=255, default='')
     from_city=models.ForeignKey(City, on_delete=models.CASCADE, related_name='from_city', verbose_name='Начальная точка')
     to_city=models.ForeignKey(City, on_delete=models.CASCADE, related_name='to_city', verbose_name='Конечная точка')
+    orderer=models.ForeignKey(Company, on_delete=models.CASCADE, verbose_name='Заказчик', default=None)
 
     class Meta:
         verbose_name="Рейс"

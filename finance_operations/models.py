@@ -13,7 +13,8 @@ class WorkSheet(models.Model):
     transport = models.ForeignKey(Transport, on_delete=models.CASCADE, verbose_name='Транспорт')
     trailer = models.ForeignKey(Trailer, on_delete=models.CASCADE, verbose_name='Прицеп', default=None)
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE, verbose_name='Работник')
-    mileage = models.IntegerField('Пробег', default=0)
+    mileage = models.IntegerField('Пробег, км', default=0)
+    tonnage = models.IntegerField('Тоннаж, т', default=0)
     
     class Meta:
         verbose_name = 'Рабочий лист'
@@ -21,7 +22,7 @@ class WorkSheet(models.Model):
 
     
     def __str__(self) :
-        return f'Путевой лист {self.id}'
+        return f'Рабочий лист {self.id}'
 
 
 # Расход

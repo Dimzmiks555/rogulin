@@ -123,7 +123,7 @@ class Trailer(models.Model):
 
 # Организация
 class Company(models.Model):
-    fio = models.CharField('ФИО', max_length=255, default='')
+    fio = models.CharField('ФИО', max_length=255, default='', help_text='Обязательно вводить через пробел!')
     inn = models.CharField('ИНН', max_length=255, default='')
     ogrn = models.CharField('ОГРН', max_length=255, default='')
     address = models.CharField('Юридический адрес', max_length=255, default='')
