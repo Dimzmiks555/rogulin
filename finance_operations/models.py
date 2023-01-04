@@ -30,11 +30,14 @@ class Expense(models.Model):
     date = models.DateField('Дата', default=date.today())
     summ = models.DecimalField('Сумма', max_digits=20, decimal_places=2)
     type = models.ForeignKey(ExpenseType, on_delete=models.CASCADE, verbose_name='Тип')
-    work_sheet = models.ForeignKey(WorkSheet, on_delete=models.CASCADE, verbose_name='Рабочий лист', default=0)
+    work_sheet = models.ForeignKey(WorkSheet, on_delete=models.CASCADE, verbose_name='Рабочий лист', default=0, blank=True)
     
     class Meta:
         verbose_name = 'Расход'
         verbose_name_plural = 'Расходы'
+
+    def __str__(self) :
+        return f'Расход на {self.type} {"к рабочему листу № " + str(self.work_sheet.id) if self.work_sheet else ""}' 
 
 # Доход
 class Income(models.Model):

@@ -16,6 +16,8 @@ class Employee(models.Model):
     passport_filial_code = models.CharField('Код подразделения', max_length=20, default='')
     passport_address = models.CharField('Адрес прописки', max_length=255, default='')
     driving_license = models.CharField('Номер водительского удостоверения', max_length=255, default='')
+    passport_scan = models.ImageField('Скан паспорта', default='', blank=True)
+    driving_license_scan = models.ImageField('Скан водительского удостоверения', default='', blank=True)
     phone = models.CharField('Номер телефона', max_length=255, default='')
 
     class Meta:
@@ -40,6 +42,7 @@ class Transport(models.Model):
     mileage = models.IntegerField('Пробег', default=0)
     driver = models.ForeignKey(Employee, on_delete=models.CASCADE, verbose_name='Закрепленный водитель', default=None)
     sts_number = models.CharField('Номер СТС', max_length=100, default='')
+    sts_scan = models.ImageField('Скан СТС', default='')
     pts_number = models.CharField('Номер ПТС', max_length=100, default='')
     vin = models.CharField('VIN-Номер', max_length=100, default='')
 
