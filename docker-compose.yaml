@@ -9,4 +9,4 @@ services:
     env_file:
       - .env
     volumes:
-      - "C:/Users/user/Videos/media:/code/media"
+      - "/home/rogulin/media:/code/media"
