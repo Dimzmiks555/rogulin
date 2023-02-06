@@ -5,9 +5,15 @@ services:
       context: ./
       dockerfile: Dockerfile
     command: python manage.py runserver 0.0.0.0:8000
-    ports:
-      - 8000:8000
+    expose:
+      - 8000
     env_file:
       - .env
     volumes:
       - "/home/rogulin/media:/code/media"
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+    depends_on:
+      - web
