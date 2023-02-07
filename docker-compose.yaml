@@ -2,7 +2,7 @@ version: "3"
 services:
   web:
     build:
-      context: ./
+      context: ./app
       dockerfile: Dockerfile
     command: gunicorn web.wsgi:application --bind 0.0.0.0:8000
     expose:
@@ -10,10 +10,11 @@ services:
     env_file:
       - .env
     volumes:
-      - "/home/rogulin/media:/code/media"
+      - "/home/rogulin/media:/home/app/web/media"
   nginx:
     build: ./nginx
     ports:
       - 80:80
+      - 443:443
     depends_on:
       - web
