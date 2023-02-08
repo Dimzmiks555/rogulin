@@ -16,9 +16,11 @@ services:
   nginx:
     network_mode: 'host'
     build: ./nginx
-    ports:
-      - 80:80
-      - 443:443
+    # ports:
+    #   - 80:80
+    #   - 443:443
+    expose:
+      - 80
     depends_on:
       - web
     volumes:
