@@ -39,12 +39,11 @@ class Transport(models.Model):
     name = models.CharField('Название', max_length=255, default='')
     model = models.CharField('Модель', max_length=255, default='')
     reg_number = models.CharField('Регистрационный номер', max_length=20)
-    mileage = models.IntegerField('Пробег', default=0)
-    driver = models.ForeignKey(Employee, on_delete=models.CASCADE, verbose_name='Закрепленный водитель', default=None)
-    sts_number = models.CharField('Номер СТС', max_length=100, default='')
-    sts_scan = models.ImageField('Скан СТС', default='')
-    pts_number = models.CharField('Номер ПТС', max_length=100, default='')
-    vin = models.CharField('VIN-Номер', max_length=100, default='')
+    mileage = models.IntegerField('Пробег', default=0, blank=True)
+    sts_number = models.CharField('Номер СТС', max_length=100, default='', blank=True)
+    sts_scan = models.ImageField('Скан СТС', default='', blank=True)
+    pts_number = models.CharField('Номер ПТС', max_length=100, default='', blank=True)
+    vin = models.CharField('VIN-Номер', max_length=100, default='', blank=True)
 
     class Meta:
         verbose_name = 'Транспорт'
