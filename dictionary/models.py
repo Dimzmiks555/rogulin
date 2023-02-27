@@ -58,6 +58,8 @@ class Transport(models.Model):
 # Город
 class City(models.Model):
     name = models.CharField('Название', max_length=255, default='')
+    region = models.CharField('Регион', max_length=255, default='')
+    area = models.CharField('Район', max_length=255, default='')
 
     class Meta:
         verbose_name = 'Город'
@@ -65,7 +67,7 @@ class City(models.Model):
 
     
     def __str__(self) :
-        return f'Город {self.name}'
+        return f'Город {self.name} р. {self.region} р-он {self.area}'
 
 # Врач
 class Doctor(models.Model):
