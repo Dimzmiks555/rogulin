@@ -9,7 +9,7 @@ from django.utils.html import format_html
 
 class WayBillAdminInline(admin.TabularInline):
     model = Ride
-    filter_horizontal = ['from_city', 'to_city']
+    # filter_horizontal = ['from_city', 'to_city']
     extra = 1
     
 
